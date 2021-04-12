@@ -1,0 +1,17 @@
+# IDE files
+.vscode
+.idea
+
+# Latex files
+*.aux
+*.bbl
+*.log
+*.blg
+*.out
+*.synctex.gz
+
+# python
+__pycache__
+
+*.secret
+*.env

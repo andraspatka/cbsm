@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{\vspace{-2cm}Content Based Similarity Matching of BPMN models}
+\date{\vspace{-1.5cm}09.12.2020}
+\author{\vspace{-2cm}Patka Zsolt-András}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+\section{Anleitung}
+
+In viele Fällen, es ist einfach zu unterscheiden, ob zwei Entitäten die gleiche sind oder nicht. Ähnlichkeit auf die Strukturbasis zu messen ist auch nicht besonderes schwierig. Ähnlichkeit auf die Inhaltsbasis zu messen ist schon schwieriger. In diesen Fall, die Entitäten sind auf Semantikbasis verglichen. Diese Probleme anfordern in viele Fällen künstliche Intelligenz Algorithmen.
+
+\section{Prozessmodelle und Texte}
+
+Der Anfang einer Prozessmodellierung ist immer ein Text. Ein Text ist von einen Kunden oder Vorgesetzter geschrieben. Nach diesen Text geschrieben wurde, die wertvolle Informationen sind davon extrahiert. Von diesen Informationen eine Prozess ist gebaut. Ein Prozessmodell entspricht immer einen Text und umgekehrt. 
+
+Ein Prozessmodell enthält schon Interpretation von dem Ersteller. Es sollte möglich sein, eine Prozessmodell in ein Text zu konvertieren. In Bezug auf Inhaltsbasierte Ähnlichkeit haben Texte mehrere Vorteile als Prozessmodelle, da es schon sehr viele bereit implementierte Textähnlichkeit messende Lösungen gibt \cite{gomaa2013survey}.
+
+\section{Prozessmodell in ein Text konvertieren}
+
+Ein Prozessmodell enthält Texte normalerweise in den folgende Komponente: Aktivitäten, Start- und Endevents, Kontrollknoten, Sequenzflüsse, Rollen. Diese Texte haben eine semantische Bedeutung, die generell nur den Menschen relevant sind. 
+
+Inkrementell, ein Text kann gebaut werden. Die BPMN Prozess muss durch iteriert werden und die Texte sollen von den Komponenten extrahiert werden. 
+
+\section{Twinwords API - Textähnlichkeit}
+
+Twinwords bietet einen \href{https://www.twinword.com/api/text-similarity.php}{API für Textähnlichkeit Messung an}. Diesen API benutzt bereits trainierte künstliche Intelligenz Modellen. Die API erwartet zwei Texte als Input und es gibt eine Ähnlichkeits-Prozentsatz zurück.
+
+\section{Inputs und Output}
+
+Zwei BPMN Prozess (xml-basierte .bpmn Dateien extrahiert von Adonis) Dateien werden die Inputs sein. Die Output wird eine Ähnlichkeits-Prozentsatz sein.
+
+
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{ieeetr}
+\bibliography{References}
+
+\end{document}

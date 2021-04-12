@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{\vspace{-2cm}Content Based Similarity Matching of BPMN models}
+\date{\vspace{-1.5cm}09.12.2020}
+\author{\vspace{-2cm}Patka Zsolt-András}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+\section{Introduction}
+
+The main idea of my approach was to convert the BPMN processes to texts, because a lot of approaches already exist for comparing two texts semantically \cite{gomaa2013survey}. I also wanted to keep things simple and offload the text similarity logic to an already existing and well functioning API. For this I used the Twinwords API.
+
+\section{Difficulties}
+
+Unfortunately Twinwords does not provide much description about how their similarity calculations are performed, what algorithms are used, and what exactly the return value means. The most that they write about their algorithms is the following: "If you simply want to know the relationship score between two documents, just make an API call and you got it." To get a deeper understanding of the return values, I had to manually test the API with multiple different text pairs and observe the return values.
+
+
+\section{Exploration of the text similarity algorithm}
+
+\input{testCases.tex}
+
+
+\section{Possibilities}
+
+The provided services could be used for sorting BPMN processes based on their content. 
+
+
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{ieeetr}
+\bibliography{References}
+
+\end{document}

@@ -1,0 +1,22 @@
+version: "2"
+services:
+  parsing:
+    build:
+      context: server
+      args:
+        SOURCE_DIR: parsing
+        INTERNAL_PORT: 8000
+        SERVICE_NAME: parsing_service
+    ports:
+      - 8000:8000
+  twinwords:
+    build:
+      context: server
+      args:
+        SOURCE_DIR: twinwords
+        INTERNAL_PORT: 8001
+        SERVICE_NAME: twinwords_service
+    env_file:
+      - twinwords_api.env
+    ports:
+      - 8001:8001
